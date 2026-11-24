@@ -120,3 +120,17 @@ button:hover {
 .button:hover {
   background-color: #ffc233;
 }
+
+
+/* The footer: a dark strip at the bottom, like the header */
+footer {
+  background-color: #222222;
+  color: #ffffff;
+  padding: 16px;
+  margin-top: 24px;   /* space between the content and the footer */
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;  /* a little smaller than normal text */
+}
