@@ -190,13 +190,13 @@ footer p {
 }
 
 /* The small category label on each card */
-.tag {
+.game-card .tag {
   display: inline-block;
   padding: 2px 10px;
   background-color: #1d3557;
   color: #ffffff;
   border-radius: 999px;   /* fully rounded ends, like a pill */
-  font-size: 0.8rem !important;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 
