@@ -134,3 +134,21 @@ footer p {
   margin: 0;
   font-size: 0.9rem;  /* a little smaller than normal text */
 }
+
+/* The category sections: light cards that stand out from the page */
+.category {
+  background-color: #ffffff;
+  padding: 24px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 2px solid #e0dccf;
+}
+
+.category h2 {
+  margin: 0 0 8px;
+  color: #1d3557;
+}
+
+.category p {
+  margin: 0;
+}
