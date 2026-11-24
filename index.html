@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <!-- This makes the page fit phone screens -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Game Hub - Find your next favourite game</title>
+  <title>Game Hub - Find your next favourite game</title>
   <!-- Connect the style file -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Everything visible on the page lives inside this main box -->
+  <!-- The header: site name and main navigation -->
   <header>
-  	  <div class="logo">Game Hub</div>
-        <!-- The main navigation: links to the four game categories -->
+    <div class="logo">Game Hub</div>
+    <!-- The main navigation: links to the four game categories -->
     <nav>
       <ul>
         <li><a href="#pc">PC Games</a></li>
@@ -23,22 +23,20 @@
     </nav>
   </header>
   <main>
-
-        <!-- The hero: the big first impression under the header -->
+    <!-- The hero: the big first impression under the header -->
     <section class="hero">
       <h1>Find your next favourite game</h1>
       <p>PC, console, card and board games, all in one place.</p>
       <a class="button" href="#pc">Start exploring</a>
     </section>
 
-       <!-- Category: PC games -->
+    <!-- Category: PC games -->
     <section class="category" id="pc">
       <h2>PC Games</h2>
       <p>From fast shooters to huge adventures, play on your own computer with the best graphics and controls.</p>
     </section>
 
-
-        <!-- Category: Console games -->
+    <!-- Category: Console games -->
     <section class="category" id="consoles">
       <h2>Console Games</h2>
       <p>Relax on the sofa with your controller, and play alone or with friends on your favourite console.</p>
@@ -55,8 +53,8 @@
       <h2>Board Games</h2>
       <p>Bring the family or friends around the table for strategy, luck and plenty of laughs.</p>
     </section>
- 
-        <!-- Featured games: a few examples shown as small cards -->
+
+    <!-- Featured games: a few examples shown as small cards -->
     <section class="featured">
       <h2>Featured games</h2>
       <div class="cards">
@@ -83,7 +81,7 @@
       </div>
     </section>
 
-        <!-- Call to action: the final invitation near the bottom -->
+    <!-- Call to action: the final invitation near the bottom -->
     <section class="cta">
       <h2>Ready to play?</h2>
       <p>Pick a category and find your next favourite game.</p>
@@ -92,20 +90,19 @@
 
     <!-- About: who made this site -->
     <section class="about" id="about">
+      <h2>About me</h2>
+      <p>Hi! I'm Thanos and I'm an Intern in my early 20s. I'm learning how to use GitHub and how to work with AI, and this is my first web page so I decided to make it about hobbies, mostly mine, since I thought that this could interest some people. It's very simple, but I made it myself and I'm happy to share it.</p>
+      <p>My favourite hobby: Playing Videogames, and now learning to code</p>
 
-    <h2>About me</h2>
-    <p>Hi! I'm Thanos and I'm an Intern in my early 20s. I'm learning how to use GitHub and how to work with AI, and this is my first web page so I decided to make it about hobbies, mostly mine, since I thought that this could interest some people. It's very simple, but I made it myself and I'm happy to share it.</p>
-    <p>My favourite hobby: Playing Videogames, and now learning to code</p>
+      <!-- The button that changes the colour -->
+      <button id="colour-button">Click me</button>
 
-    <!-- The button that changes the colour -->
-    <button id="colour-button">Click me</button>
-
-    <!-- The message appears here after the first click -->
-    <p id="message"></p>
+      <!-- The message appears here after the first click -->
+      <p id="message"></p>
     </section>
   </main>
 
-    <!-- The footer: the strip at the bottom of the page -->
+  <!-- The footer: the strip at the bottom of the page -->
   <footer>
     <p>&copy; 2026 Game Hub. A practice website made by Thanos.</p>
   </footer>
