@@ -1,11 +1,21 @@
+:root {
+  --page-bg: #f4f1ea;
+  --text: #222222;
+}
+
+body.dark {
+  --page-bg: #1b1b1f;
+  --text: #f0f0f0;
+}
+
 /* Basic page look: dark text, centred content, smooth colour change */
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  color: #222222;           /* dark text, easy to read */
-  background-color: #f4f1ea;
+  background-color: var(--page-bg);
+  color: var(--text);
   text-align: center;
   transition: background-color 0.4s;
 }
@@ -79,13 +89,6 @@ button {
 
 button:hover {
   background-color: #eeeeee;
-}
-
-/* The "Hi!" message under the button */
-#message {
-  font-size: 1.6rem;
-  font-weight: bold;
-  min-height: 2rem;  /* keeps the space so the page does not jump */
 }
 
 /* The hero: a coloured box that stands out */
