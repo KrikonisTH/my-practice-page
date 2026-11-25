@@ -230,3 +230,12 @@ footer p {
   margin: 0 0 8px;
   color: #1d3557;
 }
+
+.game-card img {
+  display: block;       /* removes a small gap under the image */
+  width: 100%;          /* fills the card's width */
+  height: 160px;        /* every card image has the same height */
+  object-fit: cover;    /* crops to fill the box instead of squashing the picture */
+  border-radius: 8px;
+  margin-bottom: 12px;
+}

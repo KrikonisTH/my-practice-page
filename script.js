@@ -1,20 +1,20 @@
 const games=[
-  {title: "Minecraft", category: "pc", description: "Build, explore and survive in a world made of blocks." } , 
-  {title: "Mario Kart 8 Deluxe", category: "console", description: "Race against friends with wild items and colourful tracks." } , 
-  {title: "UNO", category: "cards", description: "A fast and simple card game that is fun for all ages." } , 
-  {title: "Catan", category: "board", description: "Trade resources and build settlements to win the island." } , 
-  {title: "Dota 2", category: "pc", description: "A huge MOBA with extremely interesting heroes." } , 
-  {title: "Tekken 8", category: "console", description: "Choose your fighter and battle your friends." } , 
-  {title: "Skull", category: "cards", description: "A fast bluffing game with face down rose and skull cards." } , 
-  {title: "Monopoly", category: "board", description: "Buy,trade and pay rent to bankruptcy with your friends." } , 
-  {title: "Doom", category: "pc", description: "Shoot and kill demons till you can't no more in this iconic FPS." } , 
-  {title: "Forza Horizon 6", category: "console", description: "Build your cars and race with them." } , 
-  {title: "Dominion", category: "cards", description: "A deck-building game that will rack your brain." } , 
-  {title: "Clue", category: "board", description: "Murder-mystery deduction game where you find the clues." } , 
-  {title: "Red Dead Redemption 2", category: "pc", description: "Explore an openworld and it's story in the Wild West." } , 
-  {title: "Hollow Knight", category: "console", description: "Jump, dash and run in this platform game." } , 
-  {title: "Scout", category: "cards", description: "Climb the ladder faster than your opponent and subotage them with your cards." } , 
-  {title: "Scrabble", category: "board", description: "Build words and score points with letter tiles." }
+  {title: "Minecraft", category: "pc", description: "Build, explore and survive in a world made of blocks.", image: "images/pc-keyboard.jpg" , alt: "Illuminated computer set on a desk"} , 
+  {title: "Mario Kart 8 Deluxe", category: "console", description: "Race against friends with wild items and colourful tracks.", image: "images/console-controller.jpg" , alt: "Gaming controller placed on wood" } , 
+  {title: "UNO", category: "cards", description: "A fast and simple card game that is fun for all ages.", image: "images/cards-deck.jpg" , alt: "Standing pack of playing cards" } , 
+  {title: "Catan", category: "board", description: "Trade resources and build settlements to win the island.", image: "images/board-dice.jpg" , alt: "Set of dice on reflective surface" } , 
+  {title: "Dota 2", category: "pc", description: "A huge MOBA with extremely interesting heroes.", image: "images/pc-keyboard.jpg" , alt: "Illuminated computer set on a desk" } , 
+  {title: "Tekken 8", category: "console", description: "Choose your fighter and battle your friends.", image: "images/console-controller.jpg" , alt: "Gaming controller placed on wood" } , 
+  {title: "Skull", category: "cards", description: "A fast bluffing game with face down rose and skull cards.", image: "images/cards-deck.jpg" , alt: "Standing pack of playing cards" } , 
+  {title: "Monopoly", category: "board", description: "Buy,trade and pay rent to bankruptcy with your friends.", image: "images/board-dice.jpg" , alt: "Set of dice on reflective surface" } , 
+  {title: "Doom", category: "pc", description: "Shoot and kill demons till you can't no more in this iconic FPS.", image: "images/pc-keyboard.jpg" , alt: "Illuminated computer set on a desk" } , 
+  {title: "Forza Horizon 6", category: "console", description: "Build your cars and race with them.", image: "images/console-controller.jpg" , alt: "Gaming controller placed on wood" } , 
+  {title: "Dominion", category: "cards", description: "A deck-building game that will rack your brain.", image: "images/cards-deck.jpg" , alt: "Standing pack of playing cards" } , 
+  {title: "Clue", category: "board", description: "Murder-mystery deduction game where you find the clues.", image: "images/board-dice.jpg" , alt: "Set of dice on reflective surface" } , 
+  {title: "Red Dead Redemption 2", category: "pc", description: "Explore an openworld and it's story in the Wild West." , image: "images/pc-keyboard.jpg" , alt: "Illuminated computer set on a desk"} , 
+  {title: "Hollow Knight", category: "console", description: "Jump, dash and run in this platform game.", image: "images/console-controller.jpg" , alt: "Gaming controller placed on wood" } , 
+  {title: "Scout", category: "cards", description: "Climb the ladder faster than your opponent and subotage them with your cards.", image: "images/cards-deck.jpg" , alt: "Standing pack of playing cards" } , 
+  {title: "Scrabble", category: "board", description: "Build words and score points with letter tiles.", image: "images/board-dice.jpg" , alt: "Set of dice on reflective surface" }
 ];
 
 // Readable names for the tag on each card
@@ -33,6 +33,11 @@ games.forEach(function (game) {
   const card = document.createElement("article");
   card.className = "game-card";
 
+  // NEW: make and fill the picture
+  const image = document.createElement("img");
+  image.src = game.image;
+  image.alt = game.alt;
+
   const title = document.createElement("h3");
   title.textContent = game.title;
 
@@ -43,6 +48,8 @@ games.forEach(function (game) {
   const description = document.createElement("p");
   description.textContent = game.description;
 
+  // NEW: place the picture FIRST, so it's at the top of the card
+  card.appendChild(image);
   card.appendChild(title);
   card.appendChild(tag);
   card.appendChild(description);
