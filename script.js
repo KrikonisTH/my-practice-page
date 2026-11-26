@@ -47,10 +47,18 @@ function renderGames(list) {
   
     const card = document.createElement("article");
     card.className = "game-card";
+    card.tabIndex = 0;
     
     card.addEventListener("click", function () {
       openModal(game);
     });
+
+   card.addEventListener("keydown", function (event) {
+     if (event.key === "Enter" || event.key === " ") {
+       event.preventDefault();
+       openModal(game);
+     }
+   });
 
     // NEW: make and fill the picture
     const image = document.createElement("img");
