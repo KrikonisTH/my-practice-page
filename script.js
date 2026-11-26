@@ -28,6 +28,11 @@ const categoryLabels = {
 // Find the place where the cards go
 const grid = document.getElementById("games-grid");
 const pagination = document.getElementById("pagination");
+const modal = document.getElementById("modal");
+const modalImage = document.getElementById("modal-image");
+const modalTitle = document.getElementById("modal-title");
+const modalTag = document.getElementById("modal-tag");
+const modalDescription = document.getElementById("modal-description");
 
 const pageSize = 8;        // how many cards per page (never changes)
 let currentPage = 1;       // which page we're on (changes when you click)
@@ -41,6 +46,10 @@ function renderGames(list) {
   
     const card = document.createElement("article");
     card.className = "game-card";
+    
+    card.addEventListener("click", function () {
+      openModal(game);
+    });
 
     // NEW: make and fill the picture
     const image = document.createElement("img");
@@ -111,6 +120,15 @@ function renderPagination() {
     showPage();
   });
   pagination.appendChild(next);
+}
+
+function openModal(game) {
+  modalImage.src = game.image;
+  modalImage.alt = game.alt;
+  modalTitle.textContent = game.title;
+  modalTag.textContent = categoryLabels[game.category];
+  modalDescription.textContent = game.description;
+  modal.hidden = false;      // show the popup
 }
 
 showPage();
