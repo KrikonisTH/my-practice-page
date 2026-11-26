@@ -48,6 +48,7 @@ function renderGames(list) {
     const card = document.createElement("article");
     card.className = "game-card";
     card.tabIndex = 0;
+    card.setAttribute("role", "button");
     
     card.addEventListener("click", function () {
       openModal(game);
