@@ -139,6 +139,7 @@ function openModal(game) {
   modalTag.textContent = categoryLabels[game.category];
   modalDescription.textContent = game.description;
   modal.hidden = false;      // show the popup
+  modalClose.focus();
 }
 
 function closeModal() {
