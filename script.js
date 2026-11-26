@@ -64,6 +64,23 @@ function renderGames(list) {
 
 renderGames(games);
 
+const filterButtons = document.querySelectorAll(".filter-button");
+
+filterButtons.forEach(function (filterButton) {
+  filterButton.addEventListener("click", function () {
+    const category = filterButton.dataset.category;
+
+    if (category === "all"){
+       renderGames(games);
+    }else{
+     const filtered = games.filter(function (game){
+       return game.category === category;
+     });
+     renderGames(filtered);
+   }
+  });
+});
+
 // Find the theme button on the page
 var button = document.getElementById("theme-button");
 
