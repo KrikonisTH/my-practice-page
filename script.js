@@ -28,6 +28,10 @@ const categoryLabels = {
 // Find the place where the cards go
 const grid = document.getElementById("games-grid");
 
+const pageSize = 8;        // how many cards per page (never changes)
+let currentPage = 1;       // which page we're on (changes when you click)
+let currentList = games;   // the list the filter chose (changes when you click a filter)
+
 // Make one card for every game in the list
 function renderGames(list) {
   grid.innerHTML="";
@@ -62,7 +66,13 @@ function renderGames(list) {
   });
 }
 
-renderGames(games);
+function showPage() {
+  const start = (currentPage - 1) * pageSize;
+  const end = start + pageSize;
+  renderGames(currentList.slice(start, end));
+}
+
+showPage();
 
 const filterButtons = document.querySelectorAll(".filter-button");
 
