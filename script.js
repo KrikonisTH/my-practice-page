@@ -27,6 +27,7 @@ const categoryLabels = {
 
 // Find the place where the cards go
 const grid = document.getElementById("games-grid");
+const pagination = document.getElementById("pagination");
 
 const pageSize = 8;        // how many cards per page (never changes)
 let currentPage = 1;       // which page we're on (changes when you click)
@@ -70,6 +71,45 @@ function showPage() {
   const start = (currentPage - 1) * pageSize;
   const end = start + pageSize;
   renderGames(currentList.slice(start, end));
+  renderPagination();
+}
+
+function renderPagination() {
+  const totalPages = Math.ceil(currentList.length / pageSize);
+  pagination.innerHTML = "";
+
+  // The Previous button
+  const previous = document.createElement("button");
+  previous.textContent = "Previous";
+  previous.disabled = currentPage === 1;
+  previous.addEventListener("click", function () {
+    currentPage = currentPage - 1;
+    showPage();
+  });
+  pagination.appendChild(previous);
+
+  // One button for every page: 1, 2, 3...
+  for (let page = 1; page <= totalPages; page++) {
+    const pageButton = document.createElement("button");
+    pageButton.textContent = page;
+    if (page === currentPage) {
+      pageButton.className = "active";
+    }
+    pageButton.addEventListener("click", function () {
+      currentPage = page;
+      showPage();
+    });
+    pagination.appendChild(pageButton);
+  }
+
+  const next = document.createElement("button");
+  next.textContent = "Next";
+  next.disabled = currentPage === totalPages;
+  next.addEventListener("click", function () {
+    currentPage = currentPage + 1;
+    showPage();
+  });
+  pagination.appendChild(next);
 }
 
 showPage();
