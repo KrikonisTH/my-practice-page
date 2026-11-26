@@ -33,6 +33,7 @@ const modalImage = document.getElementById("modal-image");
 const modalTitle = document.getElementById("modal-title");
 const modalTag = document.getElementById("modal-tag");
 const modalDescription = document.getElementById("modal-description");
+const modalClose = document.getElementById("modal-close");
 
 const pageSize = 8;        // how many cards per page (never changes)
 let currentPage = 1;       // which page we're on (changes when you click)
@@ -130,6 +131,24 @@ function openModal(game) {
   modalDescription.textContent = game.description;
   modal.hidden = false;      // show the popup
 }
+
+function closeModal() {
+  modal.hidden = true;
+}
+
+modalClose.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
+
+modal.addEventListener("click", function (event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
 
 showPage();
 
