@@ -121,13 +121,14 @@ filterButtons.forEach(function (filterButton) {
     const category = filterButton.dataset.category;
 
     if (category === "all"){
-       renderGames(games);
+       currentList = games;
     }else{
-     const filtered = games.filter(function (game){
+      currentList = games.filter(function (game){
        return game.category === category;
      });
-     renderGames(filtered);
    }
+   currentPage = 1;
+   showPage();
   });
 });
 
