@@ -46,6 +46,7 @@ function renderGames(list) {
     const image = document.createElement("img");
     image.src = game.image;
     image.alt = game.alt;
+    image.loading = "lazy";
 
     const title = document.createElement("h3");
     title.textContent = game.title;
