@@ -95,6 +95,17 @@
     <p>&copy; 2026 Game Hub. A practice website made by an intern.</p>
   </footer>
 
+  <!-- The popup: hidden until a game card is clicked -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <img id="modal-image" src="" alt="">
+      <h2 id="modal-title"></h2>
+      <p class="tag" id="modal-tag"></p>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
   <!-- Connect the script file (at the end so the page above loads first) -->
   <script src="script.js"></script>
 </body>
