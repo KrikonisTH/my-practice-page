@@ -29,33 +29,40 @@ const categoryLabels = {
 const grid = document.getElementById("games-grid");
 
 // Make one card for every game in the list
-games.forEach(function (game) {
-  const card = document.createElement("article");
-  card.className = "game-card";
+function renderGames(list) {
+  grid.innerHTML="";
 
-  // NEW: make and fill the picture
-  const image = document.createElement("img");
-  image.src = game.image;
-  image.alt = game.alt;
+  list.forEach(function (game) {
+  
+    const card = document.createElement("article");
+    card.className = "game-card";
 
-  const title = document.createElement("h3");
-  title.textContent = game.title;
+    // NEW: make and fill the picture
+    const image = document.createElement("img");
+    image.src = game.image;
+    image.alt = game.alt;
 
-  const tag = document.createElement("p");
-  tag.className = "tag";
-  tag.textContent = categoryLabels[game.category];
+    const title = document.createElement("h3");
+    title.textContent = game.title;
 
-  const description = document.createElement("p");
-  description.textContent = game.description;
+    const tag = document.createElement("p");
+    tag.className = "tag";
+    tag.textContent = categoryLabels[game.category];
 
-  // NEW: place the picture FIRST, so it's at the top of the card
-  card.appendChild(image);
-  card.appendChild(title);
-  card.appendChild(tag);
-  card.appendChild(description);
+    const description = document.createElement("p");
+    description.textContent = game.description;
 
-  grid.appendChild(card);
-});
+    // NEW: place the picture FIRST, so it's at the top of the card
+    card.appendChild(image);
+    card.appendChild(title);
+    card.appendChild(tag);
+    card.appendChild(description);
+
+    grid.appendChild(card);
+  });
+}
+
+renderGames(games);
 
 // Find the theme button on the page
 var button = document.getElementById("theme-button");
