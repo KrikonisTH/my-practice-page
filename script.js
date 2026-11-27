@@ -38,6 +38,7 @@ const modalClose = document.getElementById("modal-close");
 const pageSize = 8;        // how many cards per page (never changes)
 let currentPage = 1;       // which page we're on (changes when you click)
 let currentList = games;   // the list the filter chose (changes when you click a filter)
+let lastFocused = null;
 
 // Make one card for every game in the list
 function renderGames(list) {
@@ -139,11 +140,15 @@ function openModal(game) {
   modalTag.textContent = categoryLabels[game.category];
   modalDescription.textContent = game.description;
   modal.hidden = false;      // show the popup
+  lastFocused = document.activeElement;
   modalClose.focus();
 }
 
 function closeModal() {
   modal.hidden = true;
+  if (lastFocused) {
+    lastFocused.focus();
+  }
 }
 
 modalClose.addEventListener("click", closeModal);
